@@ -1,0 +1,2 @@
+# muzic
+Music for all.
