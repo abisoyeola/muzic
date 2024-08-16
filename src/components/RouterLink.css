@@ -1,0 +1,37 @@
+.container {
+    /* for the div */
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+}
+
+.nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    color: white;
+}
+
+/* .nav li {
+    padding: 20px;
+}
+
+.nav li:hover {
+    background-color: red;
+    padding: 20px;
+} */
+
+
+.nav a {
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    color: yellow;
+}

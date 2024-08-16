@@ -6,36 +6,52 @@ import Features from '../Pages/Features'
 import Home from '../Pages/Home'
 import SignIn from '../Pages/SignIn'
 import SignUp from '../Pages/SignUp'
+import styles from './RouterLink.css'
+
+
 const RouterLink = () => {
     return (
         <Router>
-            <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Muzic</Link>
-                        </li>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/about">About</Link>
-                        </li>
-                        <li>
-                            <Link to="/features">Features</Link>
-                        </li>
-                        <li>
-                            <Link to="/contact">Contact</Link>
-                        </li>
-                        <li>
-                            <Link to="/signin">Sign In</Link>
-                        </li>
-                        <li>
-                            <Link to="/signup">Sign Up</Link>
-                        </li>
-                    </ul>
+            <div className='container'>
+                <nav className='nav'>
+                    <div style={{ flex: 2 }}>
+                        <ul>
+
+                            <li>
+                                <Link to="/">Muzic</Link>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                    <div style={{ flex: 4 }}>
+                        <ul>
+                            <li>
+                                <Link to="/">Home</Link>
+                            </li>
+                            <li>
+                                <Link to="/about">About</Link>
+                            </li>
+                            <li>
+                                <Link to="/features">Features</Link>
+                            </li>
+                            <li>
+                                <Link to="/contact">Contact</Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style={{ display: 'flex', flex: 2, flexDirection: 'row', justifyContent: 'flex-end' }}>
+                        <ul>
+                            <li>
+                                <Link to="/signin">Sign In</Link>
+                            </li>
+                            <li>
+                                <Link to="/signup">Sign Up</Link>
+                            </li>
+                        </ul>
+                    </div>
                 </nav>
-            </div>
+            </div >
             <Routes>
                 <Route path='/' element={<Home />} />
                 <Route path='/about' element={<About />} />
@@ -44,8 +60,9 @@ const RouterLink = () => {
                 <Route path='/signin' element={<SignIn />} />
                 <Route path='/signup' element={<SignUp />} />
             </Routes>
-        </Router>
+        </Router >
     )
 }
 
 export default RouterLink
+
