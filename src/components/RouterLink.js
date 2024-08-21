@@ -6,7 +6,9 @@ import Features from '../Pages/Features'
 import Home from '../Pages/Home'
 import SignIn from '../Pages/SignIn'
 import SignUp from '../Pages/SignUp'
+import ActiveButton from './ActiveButton'
 import styles from './RouterLink.css'
+import Lock from './lock.png'
 
 
 const RouterLink = () => {
@@ -43,10 +45,10 @@ const RouterLink = () => {
                     <div style={{ display: 'flex', flex: 2, flexDirection: 'row', justifyContent: 'flex-end' }}>
                         <ul>
                             <li>
-                                <Link to="/signin">Sign In</Link>
+                                <Link to="/signin"><ActiveButton btn={stylesBtn.signIn} content={<img src={Lock} width={24} />} /></Link>
                             </li>
                             <li>
-                                <Link to="/signup">Sign Up</Link>
+                                <Link to="/signup"><ActiveButton btn={stylesBtn.signupbtn} content={'Sign Up'} /></Link>
                             </li>
                         </ul>
                     </div>
@@ -66,3 +68,26 @@ const RouterLink = () => {
 
 export default RouterLink
 
+
+const stylesBtn = {
+    signupbtn: {
+        color: 'blue',
+        padding: 15,
+        width: 120,
+        borderStyle: 'none',
+        border: 'none',
+        borderTopLeftRadius: 40,
+        borderBottomLeftRadius: 40,
+    },
+    signIn: {
+        padding: 10,
+        color: 'blue',
+        width: 50,
+        borderStyle: 'none',
+        border: 'none',
+        borderTopLeftRadius: 40,
+        borderBottomLeftRadius: 40,
+        borderTopRightRadius: 40,
+        borderBottomRightRadius: 40,
+    }
+}
