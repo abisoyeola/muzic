@@ -50,7 +50,7 @@ const Home = () => {
                 marginRight: 40,
             },
             cardBgColor: {
-                backgroundImage: 'linear-gradient(rgba(255,255,0,0), lemon)',
+                backgroundImage: 'linear-gradient(rgba(255,255,0,0), #9B9E8F)',
                 backgroundRepeat: 'no-repeat',
                 backgroundSize: 'cover',
                 height: 200,
@@ -171,7 +171,7 @@ const Home = () => {
     return (
         <div style={styles.content}>
             <div style={styles.card}>
-                <ActiveButton btn={styles.btnwest} content={<img src={back} width={24} />} />
+                <ActiveButton btn={styles.btnwest} content={<img alt='back' src={back} width={24} />} />
 
                 {
                     musicList.map((music) => (
@@ -179,10 +179,7 @@ const Home = () => {
                     ))
                 }
 
-
-
-
-                <ActiveButton btn={styles.btneast} content={<img src={fwd} width={24} />} />
+                <ActiveButton btn={styles.btneast} content={<img alt='fwd' src={fwd} width={24} />} />
             </div>
             <div style={styles.wave}>
 
