@@ -2,6 +2,7 @@ import React from 'react'
 import ActiveButton from '../components/ActiveButton'
 import fwd from './img/fwd.png'
 import back from './img/back.png'
+import play from './img/play.png'
 import Card from '../components/Card'
 import as from './img/as.png'
 import waves from './img/wave.png'
@@ -13,6 +14,7 @@ const Home = () => {
             id: 1,
             songname: 'Bloody Samaritan',
             artistname: 'Ayra Starr',
+            music:'',
             cardBG: {
                 backgroundImage: "url(/musicimg/as.png)",
                 backgroundRepeat: 'no-repeat',
@@ -32,13 +34,15 @@ const Home = () => {
                 borderRadius: 20,
                 display: 'flex',
                 flexDirection: 'column',
-                color: 'white'
+                color: 'white',
+                justifyContent: 'flex-end'
             }
         },
         {
             id: 2,
             songname: 'Bad Influence',
             artistname: 'Omah Lay',
+            music:'',
             cardBG: {
                 backgroundImage: "url(/musicimg/ol.jpeg)",
                 backgroundRepeat: 'no-repeat',
@@ -58,13 +62,15 @@ const Home = () => {
                 borderRadius: 20,
                 display: 'flex',
                 flexDirection: 'column',
-                color: 'white'
+                color: 'white',
+                justifyContent: 'flex-end'
             }
         },
         {
             id: 3,
             songname: 'Essence',
             artistname: 'WizKid',
+            music:'',
             cardBG: {
                 backgroundImage: "url(/musicimg/wk.jpeg)",
                 backgroundRepeat: 'no-repeat',
@@ -84,13 +90,15 @@ const Home = () => {
                 borderRadius: 20,
                 display: 'flex',
                 flexDirection: 'column',
-                color: 'white'
+                color: 'white',
+                justifyContent: 'flex-end'
             }
         },
         {
             id: 4,
             songname: 'Standing Ovation',
             artistname: 'Tiwa Savage',
+            music:'',
             cardBG: {
                 backgroundImage: "url(/musicimg/tw.jpeg)",
                 backgroundRepeat: 'no-repeat',
@@ -110,13 +118,15 @@ const Home = () => {
                 borderRadius: 20,
                 display: 'flex',
                 flexDirection: 'column',
-                color: 'white'
+                color: 'white',
+                justifyContent: 'flex-end'
             }
         },
         {
             id: 5,
             songname: 'Yewa',
             artistname: 'Kizz Daniel',
+            music:'',
             cardBG: {
                 backgroundImage: "url(/musicimg/kd.jpeg)",
                 backgroundRepeat: 'no-repeat',
@@ -136,35 +146,10 @@ const Home = () => {
                 borderRadius: 20,
                 display: 'flex',
                 flexDirection: 'column',
-                color: 'white'
+                color: 'white',
+                justifyContent: 'flex-end'
             }
         },
-        {
-            id: 6,
-            songname: 'Gwagwalada',
-            artistname: 'Buju',
-            cardBG: {
-                backgroundImage: "url(/musicimg/kd.jpeg)",
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                height: 200,
-                width: 150,
-                borderRadius: 20,
-                display: 'flex',
-                marginRight: 40,
-            },
-            cardBgColor: {
-                backgroundImage: 'linear-gradient(rgba(255,255,0,0), black)',
-                backgroundRepeat: 'no-repeat',
-                backgroundSize: 'cover',
-                height: 200,
-                width: 150,
-                borderRadius: 20,
-                display: 'flex',
-                flexDirection: 'column',
-                color: 'white'
-            }
-        }
     ]
 
 
@@ -174,13 +159,28 @@ const Home = () => {
                 <ActiveButton btn={styles.btnwest} content={<img alt='back' src={back} width={24} />} />
 
                 {
+                    // for (let index = 0; index < array.length; index++) {
+                       
+                    //    <Card /> 
+                    // }
+
+                    // musicList.forEach(element => {
+                    //     console.log(element);
+                    //     <Card songname={element.songname} artistname={element.artistname} imagestyle={element.cardBG} colorstyle={element.cardBgColor} />
+                    // })
+
                     musicList.map((music) => (
-                        music.id <= 5 && <Card songname={music.songname} artistname={music.artistname} imagestyle={music.cardBG} colorstyle={music.cardBgColor} />
+                        <Card play={music.id==3 && <ActiveButton btn={styles.btnplay} content={<img alt='back' src={play} width={24} />}/>} songname1={music.songname.split(" ")[0]} songname2={music.songname.split(" ")[1]} artistname={music.id != 3 ? music.artistname : '' } imagestyle={music.cardBG} colorstyle={music.cardBgColor} />
                     ))
                 }
 
                 <ActiveButton btn={styles.btneast} content={<img alt='fwd' src={fwd} width={24} />} />
             </div>
+
+
+
+
+
             <div style={styles.wave}>
 
             </div>
@@ -193,10 +193,11 @@ export default Home
 const styles = {
     content: {
         // backgroundColor: 'blue',
-        height: 615,
+        height: '92vh',
+        
     },
     card: {
-        height: 465,
+        height: '76.4vh',
         // backgroundColor: 'yellow',
         display: 'flex',
         flexDirection: 'row',
@@ -223,6 +224,19 @@ const styles = {
         borderBottomLeftRadius: 40,
         borderTopRightRadius: 40,
         borderBottomRightRadius: 40,
+    },
+    btnplay: {
+        padding: 10,
+        color: 'blue',
+        width: 50,
+        height: 50,
+        borderStyle: 'none',
+        border: 'none',
+        borderTopLeftRadius: 40,
+        borderBottomLeftRadius: 40,
+        borderTopRightRadius: 40,
+        borderBottomRightRadius: 40,
+        backgroundColor:'#3662CC'
     },
     btneast: {
         padding: 10,
